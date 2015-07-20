@@ -4,9 +4,9 @@ from nio.metadata.properties import VersionProperty
 
 
 @Discoverable(DiscoverableType.block)
-class Example(Block):
+class SSD1306(Block):
 
-    """ This is the Example block. Put a brief description here. """
+    """ Block for writing to an SSD1306 OLED screen on Intel Edison """
 
     version = VersionProperty('0.1.0')
 
