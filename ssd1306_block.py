@@ -1,59 +1,23 @@
 from os.path import join, dirname, realpath, isfile
 from PIL import Image
-import Adafruit_GPIO.SPI as SPI
-import Adafruit_SSD1306
-from nio.common.block.base import Block
 from nio.common.discovery import Discoverable, DiscoverableType
 from nio.metadata.properties import ExpressionProperty
 from nio.metadata.properties import VersionProperty
 from nio.util.environment import NIOEnvironment
+from .ssd1306_base import SSD1306Base
 
 
 @Discoverable(DiscoverableType.block)
-class SSD1306(Block):
+class SSD1306ImageFile(SSD1306Base):
 
     """ Block for writing to an SSD1306 OLED screen on Intel Edison """
 
     version = VersionProperty('0.1.0')
     file = ExpressionProperty(title='Image File', default='niologo.png')
 
-    def __init__(self):
-        super().__init__()
-        self._display = None
-
-    def configure(self, context):
-        super().configure(context)
-        self._display = Adafruit_SSD1306.SSD1306_64_48(
-            rst=48, dc=36, spi=SPI.SpiDev(5, 1, max_speed_hz=10000000))
-
-    def start(self):
-        super().start()
-        # Initialize library.
-        self._display.begin()
-        # Clear display.
-        self._display.clear()
-        self._display.display()
-
-    def stop(self):
-        # Clear display.
-        self._display.clear()
-        self._display.display()
-        super().stop()
-
-    def process_signals(self, signals, input_id='default'):
-        for signal in signals:
-            self._display_image(signal)
-        self.notify_signals(signals, output_id='default')
-
-    def _display_image(self, signal):
-        image = self._load_image_file(signal)
-        # Display image.
-        self._display.image(image)
-        self._display.display()
-
-    def _load_image_file(self, signal):
-        """ Loads an image file from disk """
-
+    def _get_image(self, signal):
+        """ Loads an image file from disk
+        """
         # Let's figure out where the file is
         try:
             fileprop = self.file(signal)
@@ -74,7 +38,10 @@ class SSD1306(Block):
                 ' relative to the current environment.'.format(
                     fileprop))
             return None
-        image = Image.open(filename).resize((self._display.width, self._display.height), Image.ANTIALIAS).convert('1')
+        image = Image.open(filename)
+        image = image.resize((self._display.width, self._display.height), 
+                             Image.ANTIALIAS)
+        image = image.convert('1')
         return image
 
     def _get_valid_file(self, *args):
