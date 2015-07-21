@@ -1,4 +1,4 @@
-import Adafruit_GPIO.SPI as SPI
+import Adafruit_GPIO
 import Adafruit_SSD1306
 from nio.common.block.base import Block
 from nio.modules.threading import Lock
@@ -15,8 +15,9 @@ class SSD1306Base(Block):
 
     def configure(self, context):
         super().configure(context)
+        spi = Adafruit_GPIO.SPI.SpiDev(5, 1, max_speed_hz=10000000)
         self._display = Adafruit_SSD1306.SSD1306_64_48(
-            rst=48, dc=36, spi=SPI.SpiDev(5, 1, max_speed_hz=10000000))
+            rst=48, dc=36, spi=spi)
 
     def start(self):
         super().start()
