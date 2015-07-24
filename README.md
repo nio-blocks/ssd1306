@@ -1,24 +1,59 @@
-# Block Template
+SSD1306ImageFile
+================
 
-This repository serves as a "starter" repository for creating a new block.
+Block for writing to an SSD1306 OLED screen on Intel Edison
 
-## How to use
+Loads an image file from disk and then displays it to the screen.
 
-### Get the block template
+Properties
+----------
+-   **file** (exp): Image file on disk. First checks absolute path, then relative to the nio project directory, then relative to the block code file.
 
- 1. Fork this repository into your own block
- 1. Clone this repository and rename the folder
+Dependencies
+------------
+Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edision oled.
+-   [**Adafruit_GPIO**](https://github.com/neutralio/Adafruit_Python_GPIO)
+-   [**Adafruit_SSD1306**](https://github.com/neutralio/Adafruit_Python_SSD1306)
 
+Commands
+--------
+None
 
-### Rename the appropriate files
+Input
+-----
+Any list of signals.
 
- 1. Rename `example_block.py` to whatever your block name will be. We like to keep `_block` at the end of filenames that contain blocks.
- 1. In your new block Python file, rename the class to the new block's name. Do **not** put `Block` in the class name - this is implied.
- 1. Rename `test_example_block.py` to match your new block's class name. Always submit accompanying unit tests in the `tests` folder.
- 1. Rename `BLOCK_README.md` to `README.md` and update the documentation accordingly.
+Output
+------
+Same list of signals as input.
 
+------------------------------------------------------------------------------
 
-## File Reference
+SSD1306PILImage
+===============
 
- * **example_block.py** : This is the block code. Additional Python classes and files are definitely welcome. If the file contains a Block class, make sure the filename ends with `_block.py`. If the file represents a Base Block that is not discoverable by itself, have the filename end with `_base.py`.
- * **requirements.txt** : List out any Python dependencies this block requires. This file will be installed by pip when the block is installed. The command for installing the dependencies is `pip install -r requirements.txt`.
+Block for writing to an SSD1306 OLED screen on Intel Edison
+
+Displays a PIL Image file from an input signal to the screen.
+
+Properties
+----------
+-   **image** (exp): Expression property needs to evaluate to a PIL Image object.
+
+Dependencies
+------------
+Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edision oled.
+-   [**Adafruit_GPIO**](https://github.com/neutralio/Adafruit_Python_GPIO)
+-   [**Adafruit_SSD1306**](https://github.com/neutralio/Adafruit_Python_SSD1306)
+
+Commands
+--------
+None
+
+Input
+-----
+Any list of signals. Default *image* config is to have a PIL Image in the `image` attribute of the Signal.
+
+Output
+------
+Same list of signals as input.
