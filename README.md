@@ -1,3 +1,20 @@
+SSD1306
+=======
+
+Blocks for writing to an SSD1306 OLED screen on Intel Edison
+
+The [SparkFun Block for Intel Edison](https://www.sparkfun.com/products/13035) has built in push buttons that are wired up to the GPIO:
+
+| Button | Edison GPIO Pin | Mraa Pin # |
+| ------ | --------------- | ---------- |
+| Up     | 47              | 46         |
+| Down   | 44              | 31         |
+| Left   | 165             | 15         |
+| Right  | 45              | 45         |
+| Select | 48              | 33         |
+| A      | 49              | 47         |
+| B      | 46              | 32         |
+
 SSD1306ImageFile
 ================
 
