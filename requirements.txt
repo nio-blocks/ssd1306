@@ -1,2 +1,3 @@
 https://github.com/neutralio/Adafruit_Python_GPIO/zipball/master
 https://github.com/neutralio/Adafruit_Python_SSD1306/zipball/master
+pillow
