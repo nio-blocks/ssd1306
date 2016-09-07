@@ -28,7 +28,7 @@ Properties
 
 Dependencies
 ------------
-Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edision oled.
+Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edison oled.
 -   [**Adafruit_GPIO**](https://github.com/neutralio/Adafruit_Python_GPIO)
 -   [**Adafruit_SSD1306**](https://github.com/neutralio/Adafruit_Python_SSD1306)
 
@@ -59,7 +59,7 @@ Properties
 
 Dependencies
 ------------
-Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edision oled.
+Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edison oled.
 -   [**Adafruit_GPIO**](https://github.com/neutralio/Adafruit_Python_GPIO)
 -   [**Adafruit_SSD1306**](https://github.com/neutralio/Adafruit_Python_SSD1306)
 
