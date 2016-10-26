@@ -1,9 +1,14 @@
+from threading import Lock
+
 import Adafruit_GPIO
 import Adafruit_SSD1306
-from nio.common.block.base import Block
-from nio.modules.threading import Lock
+
+from nio.block.base import Block
+from nio.block.terminals import DEFAULT_TERMINAL
+from nio.util.discovery import not_discoverable
 
 
+@not_discoverable
 class SSD1306Base(Block):
 
     """ Block for writing to an SSD1306 OLED screen on Intel Edison """
@@ -32,12 +37,12 @@ class SSD1306Base(Block):
             self._display.display()
         super().stop()
 
-    def process_signals(self, signals, input_id='default'):
+    def process_signals(self, signals, input_id=DEFAULT_TERMINAL):
         for signal in signals:
             image = self._get_image(signal)
             if image:
                 self._display_image(image)
-        self.notify_signals(signals, output_id='default')
+        self.notify_signals(signals, output_id=DEFAULT_TERMINAL)
 
     def _get_image(self, signal):
         raise NotImplementedError
@@ -48,4 +53,4 @@ class SSD1306Base(Block):
                 self._display.image(image)
                 self._display.display()
         except:
-            self._logger.exception('Failed to display PIL Image')
+            self.logger.exception('Failed to display PIL Image')
