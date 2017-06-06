@@ -1,0 +1,12 @@
+{
+  "nio/SSD1306PILImage": {
+    "Version": "1.0.0",
+    "Language": "Python",
+    "Reference": "github.com/nio-blocks/ssd1306.git@v1.0.0"
+  },
+  "nio/SSD1306ImageFile": {
+    "Version": "1.0.0",
+    "Language": "Python",
+    "Reference": "github.com/nio-blocks/ssd1306.git@v1.0.0"
+  }
+}

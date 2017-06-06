@@ -15,6 +15,8 @@ The [SparkFun Block for Intel Edison](https://www.sparkfun.com/products/13035) h
 | A      | 49              | 47         |
 | B      | 46              | 32         |
 
+***
+
 SSD1306ImageFile
 ================
 
@@ -24,7 +26,7 @@ Loads an image file from disk and then displays it to the screen.
 
 Properties
 ----------
--   **file** (exp): Image file on disk. First checks absolute path, then relative to the nio project directory, then relative to the block code file.
+-   **file** (type:expression): Image file on disk. First checks absolute path, then relative to the nio project directory, then relative to the block code file.
 
 Dependencies
 ------------
@@ -44,7 +46,7 @@ Output
 ------
 Same list of signals as input.
 
-------------------------------------------------------------------------------
+***
 
 SSD1306PILImage
 ===============
@@ -55,7 +57,7 @@ Displays a PIL Image file from an input signal to the screen.
 
 Properties
 ----------
--   **image** (exp): Expression property needs to evaluate to a PIL Image object.
+-   **image** (type:expression): Expression property needs to evaluate to a PIL Image object.
 
 Dependencies
 ------------
