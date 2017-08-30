@@ -1,5 +1,7 @@
 from PIL import Image
+
 from nio.properties import VersionProperty, FileProperty
+
 from .ssd1306_base import SSD1306Base
 
 
@@ -27,7 +29,7 @@ class SSD1306ImageFile(SSD1306Base):
                     fileprop.file))
             return None
         image = Image.open(self.file().file)
-        image = image.resize((self._display.width, self._display.height), 
+        image = image.resize((self._display.width, self._display.height),
                              Image.ANTIALIAS)
         image = image.convert('1')
         return image

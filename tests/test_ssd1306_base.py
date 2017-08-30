@@ -3,10 +3,12 @@ from unittest.mock import patch
 from nio.block.terminals import DEFAULT_TERMINAL
 from nio.signal.base import Signal
 from nio.testing.block_test_case import NIOBlockTestCase
+from nio.util.discovery import not_discoverable
 
 from ..ssd1306_base import SSD1306Base
 
 
+@not_discoverable
 class SSD1306Test(SSD1306Base):
 
     def _get_image(self, signal):

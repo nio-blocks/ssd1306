@@ -1,18 +1,48 @@
 {
   "nio/SSD1306ImageFile": {
-    "version": "0.0.1",
-    "description": "",
-    "inputs": {},
-    "outputs": {},
-    "properties": {},
+    "version": "0.1.0",
+    "description": "Blocks for writing an image file to an SSD1306 OLED screen on Intel Edison. Loads an image file from disk and then displays it to the screen.",
+    "properties": {
+      "file": {
+        "title": "Image File",
+        "type": "FileType",
+        "description": "Image file on disk. First checks absolute path, then relative to the nio project directory, then relative to the block code file.",
+        "default": "niologo.png"
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals."
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input."
+      }
+    },
     "commands": {}
   },
   "nio/SSD1306PILImage": {
-    "version": "0.0.1",
-    "description": "",
-    "inputs": {},
-    "outputs": {},
-    "properties": {},
+    "version": "0.1.0",
+    "description": "Blocks for writing a PIL image to an SSD1306 OLED screen on Intel Edison. Displays a PIL Image file from an input signal to the screen.",
+    "properties": {
+      "image": {
+        "title": "PIL Image",
+        "type": "Type",
+        "description": "Expression property needs to evaluate to a PIL Image object.",
+        "default": "{{ $image }}"
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals. Default *image* config is to have a PIL Image in the `image` attribute of the Signal."
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "Same list of signals as input."
+      }
+    },
     "commands": {}
   }
 }

@@ -1,8 +1,57 @@
-SSD1306
-=======
+SSD1306ImageFile
+================
+Blocks for writing an image file to an SSD1306 OLED screen on Intel Edison. Loads an image file from disk and then displays it to the screen.
 
-Blocks for writing to an SSD1306 OLED screen on Intel Edison
+Properties
+----------
+- **file**: Image file on disk. First checks absolute path, then relative to the nio project directory, then relative to the block code file.
 
+Inputs
+------
+- **default**: Any list of signals.
+
+Outputs
+-------
+- **default**: Same list of signals as input.
+
+Commands
+--------
+None
+
+Dependencies
+------------
+Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edison oled.
+-   [**Adafruit_GPIO**](https://github.com/neutralio/Adafruit_Python_GPIO)
+-   [**Adafruit_SSD1306**](https://github.com/neutralio/Adafruit_Python_SSD1306)
+
+SSD1306PILImage
+===============
+Blocks for writing a PIL image to an SSD1306 OLED screen on Intel Edison. Displays a PIL Image file from an input signal to the screen.
+
+Properties
+----------
+- **image**: Expression property needs to evaluate to a PIL Image object.
+
+Inputs
+------
+- **default**: Any list of signals. Default *image* config is to have a PIL Image in the `image` attribute of the Signal.
+
+Outputs
+-------
+- **default**: Same list of signals as input.
+
+Commands
+--------
+None
+
+Dependencies
+------------
+Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edison oled.
+-   [**Adafruit_GPIO**](https://github.com/neutralio/Adafruit_Python_GPIO)
+-   [**Adafruit_SSD1306**](https://github.com/neutralio/Adafruit_Python_SSD1306)
+
+Pin->Button Table
+-----------------
 The [SparkFun Block for Intel Edison](https://www.sparkfun.com/products/13035) has built in push buttons that are wired up to the GPIO:
 
 | Button | Edison GPIO Pin | Mraa Pin # |
@@ -14,65 +63,3 @@ The [SparkFun Block for Intel Edison](https://www.sparkfun.com/products/13035) h
 | Select | 48              | 33         |
 | A      | 49              | 47         |
 | B      | 46              | 32         |
-
-***
-
-SSD1306ImageFile
-================
-
-Block for writing to an SSD1306 OLED screen on Intel Edison
-
-Loads an image file from disk and then displays it to the screen.
-
-Properties
-----------
--   **file** (type:expression): Image file on disk. First checks absolute path, then relative to the nio project directory, then relative to the block code file.
-
-Dependencies
-------------
-Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edison oled.
--   [**Adafruit_GPIO**](https://github.com/neutralio/Adafruit_Python_GPIO)
--   [**Adafruit_SSD1306**](https://github.com/neutralio/Adafruit_Python_SSD1306)
-
-Commands
---------
-None
-
-Input
------
-Any list of signals.
-
-Output
-------
-Same list of signals as input.
-
-***
-
-SSD1306PILImage
-===============
-
-Block for writing to an SSD1306 OLED screen on Intel Edison
-
-Displays a PIL Image file from an input signal to the screen.
-
-Properties
-----------
--   **image** (type:expression): Expression property needs to evaluate to a PIL Image object.
-
-Dependencies
-------------
-Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edison oled.
--   [**Adafruit_GPIO**](https://github.com/neutralio/Adafruit_Python_GPIO)
--   [**Adafruit_SSD1306**](https://github.com/neutralio/Adafruit_Python_SSD1306)
-
-Commands
---------
-None
-
-Input
------
-Any list of signals. Default *image* config is to have a PIL Image in the `image` attribute of the Signal.
-
-Output
-------
-Same list of signals as input.

@@ -1,5 +1,6 @@
 from nio.properties import Property
 from nio.properties import VersionProperty
+
 from .ssd1306_base import SSD1306Base
 
 
