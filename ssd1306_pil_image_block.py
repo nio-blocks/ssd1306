@@ -8,7 +8,7 @@ class SSD1306PILImage(SSD1306Base):
 
     """ Block for writing to an SSD1306 OLED screen on Intel Edison """
 
-    version = VersionProperty('0.1.0')
+    version = VersionProperty("0.1.0")
     image = Property(title='PIL Image', default='{{ $image }}')
 
     def _get_image(self, signal):
