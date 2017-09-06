@@ -2,6 +2,9 @@
   "nio/SSD1306ImageFile": {
     "version": "0.1.0",
     "description": "Blocks for writing an image file to an SSD1306 OLED screen on Intel Edison. Loads an image file from disk and then displays it to the screen.",
+    "categories": [
+      "Hardware"
+    ],
     "properties": {
       "file": {
         "title": "Image File",
@@ -25,6 +28,9 @@
   "nio/SSD1306PILImage": {
     "version": "0.1.0",
     "description": "Blocks for writing a PIL image to an SSD1306 OLED screen on Intel Edison. Displays a PIL Image file from an input signal to the screen.",
+    "categories": [
+      "Hardware"
+    ],
     "properties": {
       "image": {
         "title": "PIL Image",
