@@ -20,9 +20,10 @@ None
 
 Dependencies
 ------------
-Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edison oled.
+Note: Both Adafruit repos need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edison oled. Depending on platform, Pillow may require additional prerequisites (libjpeg, zlib, etc)be installed, see the full instructions [**here**](https://pillow.readthedocs.io/en/latest/installation.html).
 -   [**Adafruit_GPIO**](https://github.com/neutralio/Adafruit_Python_GPIO)
 -   [**Adafruit_SSD1306**](https://github.com/neutralio/Adafruit_Python_SSD1306)
+-   Pillow
 
 SSD1306PILImage
 ===============
@@ -46,9 +47,12 @@ None
 
 Dependencies
 ------------
-Note: Both of these need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edison oled.
+Note: Both Adafruit repos need to be neutralio version of the repos. The official Adafruit ones do not work with the Sparkfun Edison oled. Depending on platform, Pillow may require additional prerequisites (libjpeg, zlib, etc)be installed, see the full instructions [**here**](https://pillow.readthedocs.io/en/latest/installation.html).
 -   [**Adafruit_GPIO**](https://github.com/neutralio/Adafruit_Python_GPIO)
 -   [**Adafruit_SSD1306**](https://github.com/neutralio/Adafruit_Python_SSD1306)
+-   Pillow
+
+
 
 Pin->Button Table
 -----------------
