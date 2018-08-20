@@ -14,7 +14,8 @@ class TestSSD1306PILImage(NIOBlockTestCase):
         with patch('Adafruit_SSD1306.SSD1306_64_48'), \
                 patch('Adafruit_GPIO.SPI.SpiDev'):
             self.configure_block(blk, {})
-        image = blk._get_image(Signal({'image': Image.Image()}))
+        image = blk._get_image(
+            Signal({'image': Image.new(mode='RGB', size=(64, 48))}))
         self.assertEqual(type(image), Image.Image)
 
     def test_image_property(self):

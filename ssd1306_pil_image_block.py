@@ -15,6 +15,7 @@ class SSD1306PILImage(SSD1306Base):
         try:
             image = self.image(signal)
             self.logger.debug('Type of image: {}'.format(type(image)))
+            image = image.convert('1')
             return image
         except:
             self.logger.exception('Failed to evaluate PIL Image')
